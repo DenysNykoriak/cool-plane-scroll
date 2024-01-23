@@ -42,6 +42,7 @@ const Scene = (props: Props) => {
 
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
+
     shape.moveTo(0, -0.2);
     shape.lineTo(0.2, 0.2);
 
@@ -103,7 +104,7 @@ const Scene = (props: Props) => {
         <PerspectiveCamera position={[0, 0, 5]} fov={30} makeDefault />
 
         <group ref={airplaneGroupRef}>
-          <Float floatIntensity={1} speed={2}>
+          <Float floatIntensity={1} speed={2} rotationIntensity={0.5}>
             <PaperAirplane
               scale={[0.01, 0.01, 0.01]}
               position-y={-0.5}
